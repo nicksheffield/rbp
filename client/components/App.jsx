@@ -13,11 +13,11 @@ class App extends React.Component {
 	}
 
 	render() {
-		return (
-			<div className="Base">
-				{React.cloneElement(this.props.children, this.props)}
-			</div>
-		)
+		let props = {
+			// Put props for subpages here
+		}
+
+		return React.cloneElement(this.props.children, props)
 	}
 }
 

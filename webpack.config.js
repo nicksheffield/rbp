@@ -15,9 +15,13 @@ module.exports = {
 	},
 	module: {
 		loaders: [
-			{ test: /\.js$/,   loader: 'babel-loader',  exclude: /node_modules/ },
-			{ test: /\.jsx$/,  loader: 'babel-loader',  exclude: /node_modules/ },
-			{ test: /\.styl$/, loader: "style-loader!css-loader!stylus-loader" },
+			{ test: /\.js$/,                   loader: 'babel-loader',  exclude: /node_modules/ },
+			{ test: /\.jsx$/,                  loader: 'babel-loader',  exclude: /node_modules/ },
+			{ test: /\.styl$/,                 loader: 'style-loader!css-loader!stylus-loader' },
+			{ test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file-loader?name=/client/images/[name].[ext]' },
+			{ test: /\.css$/,                  loader: "style-loader!css-loader" },
+			{ test: /\.png$/,                  loader: "url-loader?limit=100000" },
+			{ test: /\.(eot|svg|ttf|woff(2)?)(\?v=\d+\.\d+\.\d+)?/, loader: 'url-loader' }
 		]
 	},
 	plugins: [HtmlWebpackPluginConfig]

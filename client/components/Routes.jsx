@@ -1,20 +1,16 @@
 import React from 'react'
 
-import Base from './Base.jsx'
-import Home from './Home.jsx'
+import App from './App.jsx'
+import Home from './Home/Home.jsx'
 
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 const routes = (
 	<Router history={hashHistory}>
-		<Route path="/" component={Base}>
+		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
 		</Route>
 	</Router>
 )
 
-const Routes = function() {
-	return routes
-}
-
-export default Routes
+export default function Routes() { return routes }
